@@ -1,0 +1,11 @@
+.Active {
+    color: white;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}

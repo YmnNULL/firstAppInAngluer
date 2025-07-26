@@ -1,0 +1,37 @@
+<div class="bg-secondary py-5">
+    <div class="container py-5">
+        <div class="d-flex align-items-center justify-content-center flex-column head text-white">
+            <h1>Portfolio Component</h1>
+            <i class="fa fa-star"></i>
+        </div>
+        <div class="row g-4 py-5">
+            @for (img of imgs ; track $index) {
+            <div class="col-md-2 col-lg-4">
+                <div class="position-relative overflow-hidden">
+                    <img [src]="img" alt="img" class="img-fluid rounded-3">
+                    <div class="cover" (click)="displayLayer($index)">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+            }
+            @for (img of imgs ; track $index) {
+            <div class="col-md-2 col-lg-4">
+                <div class="position-relative overflow-hidden">
+                    <img [src]="img" alt="img" class="img-fluid rounded-3">
+                    <div class="cover" (click)="displayLayer($index)">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="layer" [ngClass]="{ 'd-block': layerVisible, 'd-none': !layerVisible }" (click)="hideLayer()">
+    <div class="container h-100">
+        <div class="containerImg d-flex align-items-center justify-content-center h-100">
+            <img [src]="currentImg" alt="" class="img-fluid" (click)="$event.stopPropagation()">
+        </div>
+    </div>
+</div>
